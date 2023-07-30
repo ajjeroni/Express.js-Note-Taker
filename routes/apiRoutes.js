@@ -16,7 +16,7 @@ router.post('/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
         readAndAppend(newNote, './db/db.json')
@@ -35,11 +35,11 @@ router.post('/notes', (req, res) => {
 );
 
 router.get('/notes/:note_id', (req, res) => {
-  const noteId = parseInt(req.params.note_id, 10);
-  readDataFromFile('./db/db.json')
+    const noteId = req.params.note_id;
+    readDataFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
-      const result = json.filter((note) => note.id === noteId); 
+      const result = json.filter((note) => note.note_id === noteId);
       return result.length > 0
         ? res.json(result)
         : res.json('No note with that ID');
