@@ -31,4 +31,9 @@ const readAndAppend = (content, file) => {
   });
 };
 
-module.exports = { readFromFile, writeToFile, readAndAppend };
+function readDataFromFile(filePath) {
+  const data = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(data);
+}
+
+module.exports = { readFromFile, writeToFile, readAndAppend, readDataFromFile };
