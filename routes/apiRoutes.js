@@ -35,11 +35,11 @@ router.post('/notes', (req, res) => {
 );
 
 router.get('/notes/:note_id', (req, res) => {
-    const noteId = req.params.note_id;
-  readFromFile('../db/db.json')
+  const noteId = parseInt(req.params.note_id, 10);
+  readDataFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
-      const result = json.filter((note) => note.note_id === noteId);
+      const result = json.filter((note) => note.id === noteId); 
       return result.length > 0
         ? res.json(result)
         : res.json('No note with that ID');
