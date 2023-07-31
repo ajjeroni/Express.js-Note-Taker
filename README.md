@@ -14,8 +14,8 @@ You can access your note by clicking on it in the left hand column, this will le
 
 You can create a new note by pressing the plus button in the top right or press the "note taker" text in the top left and it will redirect you to the start page of the application. 
 
-![alt text]( )
-![alt text]( )
+![alt text](https://github.com/ajjeroni/Express.js-Note-Taker/blob/c7ce30d8fd402f3d0b30c92de23649088278e91e/Screenshot%202023-07-30%20210442.png)
+![alt text](https://github.com/ajjeroni/Express.js-Note-Taker/blob/c7ce30d8fd402f3d0b30c92de23649088278e91e/Screenshot%202023-07-30%20210458.png)
 
 ## Links
 
