@@ -3,7 +3,7 @@ const htmlRoute = require('./routes/htmlRoutes');
 const apiRoute = require('./routes/apiRoutes');
 
 const app = express();
-const PORT = 3001; 
+const port = process.env.PORT || 3001; 
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +13,6 @@ app.use(express.static('public'));
 app.use('/api', apiRoute);
 app.use('/', htmlRoute);
 
-app.listen(PORT, () =>
-    console.log(`Note Taker app listenting at http://localhost:${PORT}`)
+app.listen(port, () =>
+    console.log(`Note Taker app listenting at http://localhost:${port}`)
 );
